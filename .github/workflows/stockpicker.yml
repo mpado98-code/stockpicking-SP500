@@ -1,0 +1,36 @@
+name: Stock Picker S&P500
+
+on:
+  schedule:
+    # Ogni giorno feriale alle 07:00 UTC = 08:00 ITA inverno / 09:00 ITA estate
+    # I dati di chiusura USA del giorno precedente sono disponibili.
+    - cron: '0 7 * * 1-5'
+  workflow_dispatch:
+
+jobs:
+  run-picker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 30
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r stockpicker_requirements.txt
+
+      - name: Run stock picker
+        env:
+          TELEGRAM_BOT_TOKEN_PICKER: ${{ secrets.TELEGRAM_BOT_TOKEN_PICKER }}
+          TELEGRAM_CHAT_ID_PICKER: ${{ secrets.TELEGRAM_CHAT_ID_PICKER }}
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
+          NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+        run: python stockpicker.py
