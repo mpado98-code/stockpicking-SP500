@@ -36,12 +36,12 @@ GEMINI_API_KEY = os.environ.get("GEMINI_API_KEY")
 FMP_API_KEY = os.environ.get("FMP_API_KEY")
 NEWSAPI_KEY = os.environ.get("NEWSAPI_KEY")
 
-# Modelli Gemini in ordine di preferenza (fallback automatico se uno fallisce)
+# Modelli Gemini in ordine di preferenza (fallback automatico se uno fallisce).
+# Nota: gemini-1.5-* sono stati dismessi da Google a settembre 2025.
 GEMINI_MODELS_FALLBACK = [
-    "gemini-1.5-flash",
-    "gemini-1.5-flash-latest",
-    "gemini-2.0-flash",
     "gemini-2.5-flash",
+    "gemini-2.0-flash",
+    "gemini-flash-latest",
 ]
 
 # Soglia di conviction sotto la quale NON si invia il segnale
@@ -405,12 +405,15 @@ def chiamata_gemini(prompt):
     if not GEMINI_API_KEY:
         return None, "GEMINI_API_KEY non configurata"
 
+    # thinkingBudget=0 disattiva il "thinking" sui modelli 2.5 (che altrimenti
+    # consuma il budget di output internamente). Sui 2.0 il parametro è ignorato.
     payload = {
         "contents": [{"parts": [{"text": prompt}]}],
         "generationConfig": {
             "temperature": 0.3,
-            "maxOutputTokens": 3500,
+            "maxOutputTokens": 8192,
             "topP": 0.9,
+            "thinkingConfig": {"thinkingBudget": 0},
         }
     }
 
@@ -475,24 +478,97 @@ DOSSIER CANDIDATI:
     if not risposta:
         return None, errore
 
-    # Parse JSON, robusto a wrappers
-    try:
-        # Rimuovi eventuali markdown fences
-        clean = risposta.strip()
-        if clean.startswith("```"):
-            clean = clean.split("```")[1]
-            if clean.startswith("json"):
+    parsed = parse_json_robusto(risposta)
+    if parsed is None:
+        return None, f"Parsing JSON fallito. Risposta grezza: {risposta[:500]}"
+    return parsed, None
+
+
+def parse_json_robusto(testo):
+    """
+    Parser JSON tollerante: rimuove markdown fences, recupera anche risposte
+    troncate (es. quando il modello tronca a metà di una stringa).
+    """
+    if not testo:
+        return None
+
+    clean = testo.strip()
+    # Rimuovi eventuali code fences markdown
+    if clean.startswith("```"):
+        parts = clean.split("```")
+        if len(parts) >= 2:
+            clean = parts[1]
+            if clean.lower().startswith("json"):
                 clean = clean[4:]
-        clean = clean.strip()
-        # Trova le parentesi graffe principali
-        start = clean.find("{")
-        end = clean.rfind("}")
-        if start >= 0 and end > start:
-            clean = clean[start:end + 1]
-        parsed = json.loads(clean)
-        return parsed, None
-    except Exception as e:
-        return None, f"Parsing JSON fallito: {e}. Risposta grezza: {risposta[:500]}"
+    clean = clean.strip()
+
+    # Isola il blocco {...}
+    start = clean.find("{")
+    if start < 0:
+        return None
+    clean = clean[start:]
+
+    # 1° tentativo: parse diretto
+    try:
+        return json.loads(clean)
+    except json.JSONDecodeError:
+        pass
+
+    # 2° tentativo: prendi fino all'ultima graffa chiusa
+    end = clean.rfind("}")
+    if end > 0:
+        try:
+            return json.loads(clean[:end + 1])
+        except json.JSONDecodeError:
+            pass
+
+    # 3° tentativo: recupero da troncamento - chiudi stringhe/array/oggetti aperti
+    try:
+        return _ripara_json_troncato(clean)
+    except Exception:
+        return None
+
+
+def _ripara_json_troncato(s):
+    """Chiude virgolette, parentesi quadre e graffe rimaste aperte."""
+    risultato = []
+    in_string = False
+    escape = False
+    stack = []
+
+    for ch in s:
+        risultato.append(ch)
+        if escape:
+            escape = False
+            continue
+        if ch == "\\":
+            escape = True
+            continue
+        if ch == '"':
+            in_string = not in_string
+            continue
+        if in_string:
+            continue
+        if ch == "{":
+            stack.append("}")
+        elif ch == "[":
+            stack.append("]")
+        elif ch in "}]":
+            if stack and stack[-1] == ch:
+                stack.pop()
+
+    # Chiudi eventuale stringa aperta
+    if in_string:
+        risultato.append('"')
+    # Rimuovi virgola finale prima della chiusura
+    testo = "".join(risultato).rstrip()
+    if testo.endswith(","):
+        testo = testo[:-1]
+    # Chiudi tutte le strutture rimaste aperte
+    while stack:
+        testo += stack.pop()
+
+    return json.loads(testo)
 
 
 # ============================================================
