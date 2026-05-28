@@ -1,0 +1,44 @@
+name: Calibration Backtest
+
+on:
+  schedule:
+    # 1° del mese alle 03:00 UTC (poco traffico, niente conflitto col picker)
+    - cron: '0 3 1 * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # necessario per committare calibration.json
+
+jobs:
+  run-calibration:
+    runs-on: ubuntu-latest
+    timeout-minutes: 60
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r stockpicker_requirements.txt
+
+      - name: Run calibration backtest
+        run: python calibration_runner.py
+
+      - name: Commit calibration.json
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add calibration.json
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica a calibration.json"
+          else
+            git commit -m "chore: aggiorna calibration.json [automated]"
+            git push
+          fi
