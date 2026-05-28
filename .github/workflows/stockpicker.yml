@@ -3,7 +3,6 @@ name: Stock Picker S&P500
 on:
   schedule:
     # Ogni giorno feriale alle 07:00 UTC = 08:00 ITA inverno / 09:00 ITA estate
-    # I dati di chiusura USA del giorno precedente sono disponibili.
     - cron: '0 7 * * 1-5'
   workflow_dispatch:
 
@@ -33,4 +32,5 @@ jobs:
           GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
           FMP_API_KEY: ${{ secrets.FMP_API_KEY }}
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
+          FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python stockpicker.py
