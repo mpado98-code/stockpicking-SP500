@@ -691,12 +691,16 @@ def get_news(ticker):
 # CALIBRAZIONE / PROBABILITÀ EMPIRICHE
 # ============================================================
 def carica_calibration():
-    """Carica calibration.json se esiste."""
+    """Carica calibration.json se esiste e ha status OK."""
     if not CALIBRATION_FILE.exists():
+        print("ℹ️ calibration.json assente: uso euristica")
         return None
     try:
         with open(CALIBRATION_FILE) as f:
             cal = json.load(f)
+        if cal.get("status") == "FAILED" or not cal.get("buckets"):
+            print(f"⚠️ Calibration con status={cal.get('status')}: uso euristica")
+            return None
         print(f"✅ Calibration caricata: {cal.get('n_samples', '?')} samples, "
               f"aggiornata {cal.get('last_updated', '?')}")
         return cal
