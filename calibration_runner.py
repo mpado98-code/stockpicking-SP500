@@ -44,6 +44,7 @@ STOP_PCT = -8.0                 # soglia stop loss (-8%)
 WEEKS_BETWEEN_CHECKS = 1        # checkpoint settimanale
 TICKERS_PER_CHECK = 80          # quanti ticker valutare per check-point (random sampling)
 MIN_SAMPLES_BUCKET = 20         # minimo per dichiarare un bucket affidabile
+BATCH_SIZE = 50                 # ticker per chiamata yf.download (evita rate limit)
 
 OUTPUT_FILE = Path(__file__).parent / "calibration.json"
 
@@ -64,40 +65,65 @@ def get_sp500_tickers():
 
 
 def scarica_storici(tickers):
-    """Scarica prezzi adjusted close + volume + OHLC in un'unica chiamata bulk."""
-    print(f"📥 Download bulk {len(tickers)} ticker, {ANNI_LOOKBACK} anni...")
+    """
+    Scarica prezzi in BATCH da BATCH_SIZE ticker per evitare rate limit/timeout di yfinance.
+    Estrae direttamente Close/Volume/High/Low aggregando i batch.
+    Ritorna 4 DataFrame separati (close, volume, high, low) con i ticker come colonne.
+    """
     end = datetime.now()
     start = end - timedelta(days=ANNI_LOOKBACK * 365 + 100)
-    try:
-        # group_by ticker per accesso pulito
-        dati = yf.download(tickers, start=start, end=end, auto_adjust=True,
-                           progress=False, group_by="ticker", threads=True)
-        print(f"✅ Download completato")
-        return dati
-    except Exception as e:
-        print(f"❌ Download fallito: {e}")
-        return None
 
+    n_batches = (len(tickers) + BATCH_SIZE - 1) // BATCH_SIZE
+    print(f"📥 Download {len(tickers)} ticker in {n_batches} batch da {BATCH_SIZE}, "
+          f"{ANNI_LOOKBACK} anni di storia...")
 
-def estrai_close_volume(dati_bulk, tickers):
-    """Da MultiIndex yfinance estrai DataFrame Close e Volume per ticker."""
-    close_dict = {}
-    volume_dict = {}
-    high_dict = {}
-    low_dict = {}
-    for t in tickers:
+    close_dict, volume_dict, high_dict, low_dict = {}, {}, {}, {}
+
+    for i in range(0, len(tickers), BATCH_SIZE):
+        batch = tickers[i:i + BATCH_SIZE]
+        n_bat = i // BATCH_SIZE + 1
         try:
-            tdata = dati_bulk[t] if t in dati_bulk.columns.get_level_values(0) else None
-            if tdata is None or tdata.empty:
+            dati = yf.download(batch, start=start, end=end, auto_adjust=True,
+                               progress=False, group_by="ticker", threads=True)
+            if dati is None or dati.empty:
+                print(f"  Batch {n_bat}/{n_batches}: vuoto, salto")
                 continue
-            close_dict[t] = tdata["Close"]
-            volume_dict[t] = tdata["Volume"]
-            high_dict[t] = tdata["High"]
-            low_dict[t] = tdata["Low"]
-        except Exception:
+
+            # Caso 1: MultiIndex (ticker, field) — quando batch ha più ticker
+            # Caso 2: colonne semplici (Close, High...) — quando batch ha 1 solo ticker
+            estratti = 0
+            for tk in batch:
+                try:
+                    if isinstance(dati.columns, pd.MultiIndex):
+                        if tk not in dati.columns.get_level_values(0):
+                            continue
+                        sub = dati[tk]
+                    else:
+                        # Singolo ticker nel batch
+                        sub = dati
+                    if sub is None or sub.empty:
+                        continue
+                    if "Close" not in sub.columns:
+                        continue
+                    close_dict[tk] = sub["Close"]
+                    volume_dict[tk] = sub["Volume"]
+                    high_dict[tk] = sub["High"]
+                    low_dict[tk] = sub["Low"]
+                    estratti += 1
+                except Exception:
+                    continue
+            print(f"  Batch {n_bat}/{n_batches}: estratti {estratti}/{len(batch)}")
+        except Exception as e:
+            print(f"  Batch {n_bat}/{n_batches}: errore {str(e)[:80]}")
             continue
-    return (pd.DataFrame(close_dict), pd.DataFrame(volume_dict),
-            pd.DataFrame(high_dict), pd.DataFrame(low_dict))
+
+    close = pd.DataFrame(close_dict)
+    volume = pd.DataFrame(volume_dict)
+    high = pd.DataFrame(high_dict)
+    low = pd.DataFrame(low_dict)
+    print(f"✅ Download completato: {close.shape[1]}/{len(tickers)} ticker validi, "
+          f"{close.shape[0]} giorni")
+    return close, volume, high, low
 
 
 # ============================================================
@@ -249,25 +275,42 @@ def stat_forward(close_serie, high_serie, low_serie, idx_oggi, days=FORWARD_DAYS
 def esegui_backtest():
     tickers = get_sp500_tickers()
     if not tickers:
+        print("❌ Universo vuoto")
         return None
     print(f"✅ Universo: {len(tickers)} ticker")
 
-    dati = scarica_storici(tickers + ["SPY", "^VIX"])
-    if dati is None or dati.empty:
-        return None
+    # Scarica TUTTO in batch (compresi SPY e VIX per regime detection)
+    close, volume, high, low = scarica_storici(tickers + ["SPY", "^VIX"])
 
-    close, volume, high, low = estrai_close_volume(dati, tickers + ["SPY", "^VIX"])
-    print(f"  Close shape: {close.shape}")
+    if close.empty or close.shape[1] < 50:
+        print(f"❌ Troppi pochi dati: solo {close.shape[1]} ticker validi")
+        return None
 
     if "SPY" not in close.columns or "^VIX" not in close.columns:
-        print("❌ SPY o VIX mancanti")
-        return None
+        print("⚠️ SPY o VIX mancanti — riprovo a scaricarli singolarmente")
+        try:
+            for sp in ["SPY", "^VIX"]:
+                if sp not in close.columns:
+                    h = yf.Ticker(sp).history(period=f"{ANNI_LOOKBACK}y", auto_adjust=True)
+                    if not h.empty:
+                        close[sp] = h["Close"]
+                        volume[sp] = h["Volume"]
+                        high[sp] = h["High"]
+                        low[sp] = h["Low"]
+        except Exception as e:
+            print(f"  Errore recupero SPY/VIX: {e}")
+        if "SPY" not in close.columns or "^VIX" not in close.columns:
+            print("❌ SPY o VIX ancora mancanti, impossibile rilevare regime")
+            return None
 
     spy_close = close["SPY"]
     vix_close = close["^VIX"]
 
     dates = close.index
-    print(f"  Range date: {dates[0].date()} → {dates[-1].date()}")
+    if len(dates) < 300:
+        print(f"❌ Storico troppo breve: {len(dates)} giorni")
+        return None
+    print(f"  Range date: {dates[0].date()} → {dates[-1].date()}, {len(dates)} giorni")
 
     # Aggregatore
     risultati = {}  # bucket_key -> list of dict {ret, hit_target, hit_stop}
@@ -354,18 +397,35 @@ def esegui_backtest():
 
 def main():
     print(f"🚀 Calibration runner avviato - {datetime.now().strftime('%Y-%m-%d %H:%M')}")
-    out = esegui_backtest()
+    out = None
+    try:
+        out = esegui_backtest()
+    except Exception as e:
+        import traceback
+        print(f"❌ Eccezione in esegui_backtest: {e}")
+        traceback.print_exc()
+
+    # Anche se il backtest fallisce, scrivi sempre un file con metadati di stato
     if not out:
-        print("❌ Backtest fallito")
+        out = {
+            "last_updated": datetime.now().strftime("%Y-%m-%d"),
+            "status": "FAILED",
+            "message": "Backtest non completato. Lo stockpicker continuerà con euristica.",
+            "n_samples": 0,
+            "buckets": {},
+        }
+        with open(OUTPUT_FILE, "w") as f:
+            json.dump(out, f, indent=2)
+        print(f"⚠️ Backtest fallito. Scritto placeholder in {OUTPUT_FILE}")
         return
 
+    out["status"] = "OK"
     with open(OUTPUT_FILE, "w") as f:
         json.dump(out, f, indent=2)
     print(f"✅ Salvato in {OUTPUT_FILE}")
     print(f"   N samples totali: {out['n_samples']}")
     print(f"   N buckets validi: {len(out['buckets'])}")
 
-    # Stampa rapida dei bucket più rilevanti
     print("\n=== BUCKET PRINCIPALI ===")
     for k in sorted(out["buckets"].keys()):
         if "_all" in k:
