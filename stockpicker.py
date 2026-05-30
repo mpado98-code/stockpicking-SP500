@@ -61,6 +61,9 @@ MAX_TARGET_PCT = 25.0
 # File calibrazione (output del backtest)
 CALIBRATION_FILE = Path(__file__).parent / "calibration.json"
 
+# File posizioni (storico trade aperti/chiusi)
+POSITIONS_FILE = Path(__file__).parent / "positions.json"
+
 # Mappa settore -> ETF di settore (per relative valuation e correlazioni)
 SECTOR_ETF_MAP = {
     "Technology": "XLK",
@@ -971,6 +974,61 @@ DOSSIER:
 # ============================================================
 # RISK MANAGEMENT
 # ============================================================
+def salva_posizione(scelta, screening, risk, regime, emp_prob):
+    """
+    Appende il nuovo trade in positions.json come posizione OPEN.
+    Il tracker settimanale ne aggiornerà lo stato.
+    """
+    try:
+        posizioni = []
+        if POSITIONS_FILE.exists():
+            with open(POSITIONS_FILE) as f:
+                posizioni = json.load(f)
+
+        ticker = scelta["ticker_scelto"]
+        data_entry = datetime.now().strftime("%Y-%m-%d")
+
+        # Evita duplicati: se ho già aperta una posizione su questo ticker, non riapro
+        already_open = any(p["ticker"] == ticker and p["status"] == "OPEN" for p in posizioni)
+        if already_open:
+            print(f"ℹ️ {ticker} già aperto in portfolio, salto save")
+            return
+
+        record = {
+            "id": f"{ticker}_{data_entry}",
+            "ticker": ticker,
+            "company_name": scelta.get("company_name", ticker),
+            "sector": screening.get("sector", "Unknown"),
+            "entry_date": data_entry,
+            "entry_price": float(screening["prezzo"]),
+            "stop_loss_price": risk["stop_loss_price"],
+            "take_profit_price": risk["take_profit_price"],
+            "stop_loss_pct": -risk["stop_loss_pct"],
+            "take_profit_pct": risk["take_profit_pct"],
+            "risk_reward": risk["risk_reward"],
+            "conviction": scelta.get("conviction_score", 0),
+            "regime_at_entry": regime.get("etichetta", "neutral"),
+            "vix_at_entry": regime.get("vix_level"),
+            "orizzonte_giorni": scelta.get("target_orizzonte_giorni", 45),
+            "beta_categoria": scelta.get("beta_categoria", "?"),
+            "emp_p_target_10pct": emp_prob.get("p_target_10pct") if emp_prob else None,
+            "emp_p_stop_8pct": emp_prob.get("p_stop_8pct") if emp_prob else None,
+            "tesi_breve": scelta.get("tesi_acquisto", "")[:300],
+            "status": "OPEN",
+            "close_date": None,
+            "close_price": None,
+            "close_reason": None,
+            "pnl_pct": None,
+            "days_held": None,
+        }
+        posizioni.append(record)
+        with open(POSITIONS_FILE, "w") as f:
+            json.dump(posizioni, f, indent=2)
+        print(f"✅ Posizione salvata: {ticker} entry ${screening['prezzo']}")
+    except Exception as e:
+        print(f"⚠️ Errore salvataggio posizione: {e}")
+
+
 def calcola_stop_target(prezzo, atr):
     if atr is None or atr <= 0:
         stop_pct, target_pct = 7.0, 14.0
@@ -1146,6 +1204,138 @@ def main():
     msg = formatta_messaggio(scelta, screening_sel, risk, regime, macro, emp_sel)
     invia_telegram(msg)
     print("✅ Segnale inviato")
+
+    # Persisti la posizione per il tracker
+    salva_posizione(scelta, screening_sel, risk, regime, emp_sel)
+
+
+if __name__ == "__main__":
+    main()
+    top_df = df.head(TOP_N_CANDIDATES)
+    print(top_df[["ticker", "sector", "prezzo", "score", "ret_1m", "ret_3m"]].to_string())
+
+    print(f"\n[6/8] Arricchimento fondamentale + relative valuation")
+    candidati = []
+    for i, row in top_df.iterrows():
+        tk = row["ticker"]
+        print(f"  [{i + 1}/{len(top_df)}] {tk}")
+        fnd = arricchisci_fondamentale(tk) if FMP_API_KEY else {}
+        rel = valutazione_relativa_settore(fnd, row.get("sector")) if FMP_API_KEY else {}
+        emp = stima_probabilita_empirica(row["score"], regime["etichetta"], calibration)
+        candidati.append({
+            "screening": row.to_dict(),
+            "fundamentals": fnd,
+            "relative_val": rel,
+            "empirical_prob": emp,
+            "news": [],
+        })
+
+    print(f"\n[7/8] Correlazioni")
+    correlazioni, matrice = calcola_correlazioni(candidati)
+    pair_ridondanti = trova_pair_ridondanti(matrice)
+    if pair_ridondanti:
+        print(f"  Coppie ridondanti (corr > 0.75): {len(pair_ridondanti)}")
+
+    print(f"\n[7.5] News per top-{TOP_N_FOR_NEWS}")
+    for i, c in enumerate(candidati[:TOP_N_FOR_NEWS]):
+        c["news"] = get_news(c["screening"]["ticker"]) if NEWSAPI_KEY else []
+        print(f"  [{i + 1}] {c['screening']['ticker']}: {len(c['news'])} news")
+
+    print(f"\n[8/8] Analisi finale Gemini")
+    scelta, errore = analisi_finale_ai(regime, macro, candidati, correlazioni, pair_ridondanti, calibration)
+    if not scelta:
+        print(f"❌ AI: {errore}")
+        return
+
+    ticker_scelto = scelta.get("ticker_scelto")
+    conviction = scelta.get("conviction_score", 0)
+    print(f"\n📊 Scelta: {ticker_scelto} | Conviction: {conviction}/100")
+
+    screening_sel = next((c["screening"] for c in candidati
+                          if c["screening"]["ticker"] == ticker_scelto), None)
+    emp_sel = next((c.get("empirical_prob") for c in candidati
+                    if c["screening"]["ticker"] == ticker_scelto), None)
+
+    if not screening_sel:
+        print(f"❌ Ticker {ticker_scelto} non trovato")
+        return
+
+    if conviction < CONVICTION_THRESHOLD:
+        print(f"⏸️ Conviction {conviction} < soglia {CONVICTION_THRESHOLD}: nessun invio")
+        return
+
+    risk = calcola_stop_target(screening_sel["prezzo"], screening_sel.get("atr"))
+    msg = formatta_messaggio(scelta, screening_sel, risk, regime, macro, emp_sel)
+    invia_telegram(msg)
+    print("✅ Segnale inviato")
+
+    # Persisti la posizione per il tracker
+    salva_posizione(scelta, screening_sel, risk, regime, emp_sel)
+
+
+if __name__ == "__main__":
+    main()
+)
+    top_df = df.head(TOP_N_CANDIDATES)
+    print(top_df[["ticker", "sector", "prezzo", "score", "ret_1m", "ret_3m"]].to_string())
+
+    print(f"\n[6/8] Arricchimento fondamentale + relative valuation")
+    candidati = []
+    for i, row in top_df.iterrows():
+        tk = row["ticker"]
+        print(f"  [{i + 1}/{len(top_df)}] {tk}")
+        fnd = arricchisci_fondamentale(tk) if FMP_API_KEY else {}
+        rel = valutazione_relativa_settore(fnd, row.get("sector")) if FMP_API_KEY else {}
+        emp = stima_probabilita_empirica(row["score"], regime["etichetta"], calibration)
+        candidati.append({
+            "screening": row.to_dict(),
+            "fundamentals": fnd,
+            "relative_val": rel,
+            "empirical_prob": emp,
+            "news": [],
+        })
+
+    print(f"\n[7/8] Correlazioni")
+    correlazioni, matrice = calcola_correlazioni(candidati)
+    pair_ridondanti = trova_pair_ridondanti(matrice)
+    if pair_ridondanti:
+        print(f"  Coppie ridondanti (corr > 0.75): {len(pair_ridondanti)}")
+
+    print(f"\n[7.5] News per top-{TOP_N_FOR_NEWS}")
+    for i, c in enumerate(candidati[:TOP_N_FOR_NEWS]):
+        c["news"] = get_news(c["screening"]["ticker"]) if NEWSAPI_KEY else []
+        print(f"  [{i + 1}] {c['screening']['ticker']}: {len(c['news'])} news")
+
+    print(f"\n[8/8] Analisi finale Gemini")
+    scelta, errore = analisi_finale_ai(regime, macro, candidati, correlazioni, pair_ridondanti, calibration)
+    if not scelta:
+        print(f"❌ AI: {errore}")
+        return
+
+    ticker_scelto = scelta.get("ticker_scelto")
+    conviction = scelta.get("conviction_score", 0)
+    print(f"\n📊 Scelta: {ticker_scelto} | Conviction: {conviction}/100")
+
+    screening_sel = next((c["screening"] for c in candidati
+                          if c["screening"]["ticker"] == ticker_scelto), None)
+    emp_sel = next((c.get("empirical_prob") for c in candidati
+                    if c["screening"]["ticker"] == ticker_scelto), None)
+
+    if not screening_sel:
+        print(f"❌ Ticker {ticker_scelto} non trovato")
+        return
+
+    if conviction < CONVICTION_THRESHOLD:
+        print(f"⏸️ Conviction {conviction} < soglia {CONVICTION_THRESHOLD}: nessun invio")
+        return
+
+    risk = calcola_stop_target(screening_sel["prezzo"], screening_sel.get("atr"))
+    msg = formatta_messaggio(scelta, screening_sel, risk, regime, macro, emp_sel)
+    invia_telegram(msg)
+    print("✅ Segnale inviato")
+
+    # Persisti la posizione per il tracker
+    salva_posizione(scelta, screening_sel, risk, regime, emp_sel)
 
 
 if __name__ == "__main__":
