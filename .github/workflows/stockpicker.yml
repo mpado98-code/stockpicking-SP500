@@ -6,6 +6,9 @@ on:
     - cron: '0 7 * * 1-5'
   workflow_dispatch:
 
+permissions:
+  contents: write   # necessario per committare positions.json quando si apre un trade
+
 jobs:
   run-picker:
     runs-on: ubuntu-latest
@@ -34,3 +37,19 @@ jobs:
           NEWSAPI_KEY: ${{ secrets.NEWSAPI_KEY }}
           FRED_API_KEY: ${{ secrets.FRED_API_KEY }}
         run: python stockpicker.py
+
+      - name: Commit positions.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -f positions.json ]; then
+            echo "Nessun positions.json: nessun segnale aperto oggi"
+            exit 0
+          fi
+          git add positions.json
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica a positions.json"
+          else
+            git commit -m "chore: nuova posizione aperta [automated]"
+            git push
+          fi
