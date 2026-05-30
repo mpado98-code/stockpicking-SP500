@@ -1,0 +1,52 @@
+name: Performance Tracker
+
+on:
+  schedule:
+    # Ogni venerdì alle 22:00 UTC = 23:00 ITA inverno / 00:00 sabato ITA estate
+    # Dopo la chiusura USA per avere dati settimanali completi
+    - cron: '0 22 * * 5'
+  workflow_dispatch:
+
+permissions:
+  contents: write   # necessario per committare positions.json aggiornato
+
+jobs:
+  run-tracker:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.10'
+
+      - name: Install dependencies
+        run: |
+          pip install --upgrade pip
+          pip install -r stockpicker_requirements.txt
+
+      - name: Run tracker
+        env:
+          TELEGRAM_BOT_TOKEN_PICKER: ${{ secrets.TELEGRAM_BOT_TOKEN_PICKER }}
+          TELEGRAM_CHAT_ID_PICKER: ${{ secrets.TELEGRAM_CHAT_ID_PICKER }}
+        run: python tracker.py
+
+      - name: Commit positions.json if changed
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if [ ! -f positions.json ]; then
+            echo "positions.json non esiste, salto commit"
+            exit 0
+          fi
+          git add positions.json
+          if git diff --cached --quiet; then
+            echo "Nessuna modifica a positions.json"
+          else
+            git commit -m "chore: aggiorna positions.json [tracker]"
+            git push
+          fi
