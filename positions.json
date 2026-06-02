@@ -1,0 +1,29 @@
+[
+  {
+    "id": "UNH_2026-06-02",
+    "ticker": "UNH",
+    "company_name": "UnitedHealth Group Inc.",
+    "sector": "Healthcare",
+    "entry_date": "2026-06-02",
+    "entry_price": 377.9,
+    "stop_loss_price": 359.0,
+    "take_profit_price": 408.28,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.04,
+    "risk_reward": 1.61,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 16.03,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime bull-quiet con volatilit\u00e0 media (VIX=16.03) e 'risk mode: on', UNH si presenta come una scelta difensiva ma con potenziale di crescita. Il suo score tecnico di 99.4/100 \u00e8 eccellente, indicando una forte tendenza rialzista. I rendimenti a 3 mesi (+30.44%) e 6 mesi (+18.62%) sono robusti,",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
+  }
+]
