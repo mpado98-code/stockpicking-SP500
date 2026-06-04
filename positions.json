@@ -25,5 +25,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "AVGO_2026-06-04",
+    "ticker": "AVGO",
+    "company_name": "Broadcom Inc.",
+    "sector": "Technology",
+    "entry_date": "2026-06-04",
+    "entry_price": 479.23,
+    "stop_loss_price": 446.11,
+    "take_profit_price": 543.63,
+    "stop_loss_pct": -6.91,
+    "take_profit_pct": 13.44,
+    "risk_reward": 1.94,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 16.49,
+    "orizzonte_giorni": 30,
+    "beta_categoria": "medium (0.5-0.75)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime 'bull-quiet' con SPY in forte trend rialzista (+10.84% vs MA200) e volatilit\u00e0 media (VIX=16.49), AVGO si distingue per la sua eccezionale forza tecnica (Score 100/100) e un momentum di prezzo superiore al settore. Ha registrato un rendimento del 12.14% nell'ultimo mese e un impressionan",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
