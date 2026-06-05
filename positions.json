@@ -24,7 +24,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 3,
+    "current_price": 399.4700012207031,
+    "current_pnl_pct": 5.71
   },
   {
     "id": "AVGO_2026-06-04",
@@ -46,12 +48,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime 'bull-quiet' con SPY in forte trend rialzista (+10.84% vs MA200) e volatilit\u00e0 media (VIX=16.49), AVGO si distingue per la sua eccezionale forza tecnica (Score 100/100) e un momentum di prezzo superiore al settore. Ha registrato un rendimento del 12.14% nell'ultimo mese e un impressionan",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": null
+    "status": "CLOSED_STOP",
+    "close_date": "2026-06-05",
+    "close_price": 446.11,
+    "close_reason": "STOP",
+    "pnl_pct": -6.91,
+    "days_held": 1
   },
   {
     "id": "MRK_2026-06-05",
@@ -78,6 +80,6 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 0
   }
 ]
