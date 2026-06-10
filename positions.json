@@ -81,5 +81,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": 0
+  },
+  {
+    "id": "KO_2026-06-10",
+    "ticker": "KO",
+    "company_name": "The Coca-Cola Company",
+    "sector": "Consumer Defensive",
+    "entry_date": "2026-06-10",
+    "entry_price": NaN,
+    "stop_loss_price": NaN,
+    "take_profit_price": NaN,
+    "stop_loss_pct": -7.0,
+    "take_profit_pct": 14.0,
+    "risk_reward": 2.0,
+    "conviction": 75,
+    "regime_at_entry": "range",
+    "vix_at_entry": 21.03,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime di mercato 'range' con volatilit\u00e0 media (VIX=21.03) e un 'risk mode' neutrale, la preferenza \u00e8 per titoli difensivi con bassa correlazione al mercato. KO, con una correlazione di -0.108 vs SPY e una beta 'low', si posiziona come un'opzione resiliente. Sebbene i dati sui rendimenti a bre",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
