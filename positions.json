@@ -19,12 +19,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime bull-quiet con volatilit\u00e0 media (VIX=16.03) e 'risk mode: on', UNH si presenta come una scelta difensiva ma con potenziale di crescita. Il suo score tecnico di 99.4/100 \u00e8 eccellente, indicando una forte tendenza rialzista. I rendimenti a 3 mesi (+30.44%) e 6 mesi (+18.62%) sono robusti,",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 3,
+    "status": "CLOSED_TARGET",
+    "close_date": "2026-06-08",
+    "close_price": 408.28,
+    "close_reason": "TARGET",
+    "pnl_pct": 8.04,
+    "days_held": 6,
     "current_price": 399.4700012207031,
     "current_pnl_pct": 5.71
   },
@@ -80,7 +80,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 0
+    "days_held": 7,
+    "current_price": 119.05000305175781,
+    "current_pnl_pct": -1.01
   },
   {
     "id": "KO_2026-06-10",
@@ -107,6 +109,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 2,
+    "current_price": 82.62000274658203,
+    "current_pnl_pct": NaN
   }
 ]
