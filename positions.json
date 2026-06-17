@@ -139,5 +139,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "GOOGL_2026-06-17",
+    "ticker": "GOOGL",
+    "company_name": "Alphabet Inc.",
+    "sector": "Communication Services",
+    "entry_date": "2026-06-17",
+    "entry_price": 373.25,
+    "stop_loss_price": 353.09,
+    "take_profit_price": 412.45,
+    "stop_loss_pct": -5.4,
+    "take_profit_pct": 10.5,
+    "risk_reward": 1.94,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 16.37,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "medium (0.5-0.75)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime bull-quiet, GOOGL presenta un solido score tecnico (100/100) e un forte momentum a 3 e 6 mesi (+21.38% e +21.26% rispettivamente), pur avendo subito un leggero ritracciamento nell'ultimo mese (-5.91%), che pu\u00f2 rappresentare un punto di ingresso. La correlazione con SPY (0.569) \u00e8 media, ",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
