@@ -75,12 +75,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime bull-quiet con SPY in trend rialzista dell'11.17% rispetto alla MA200 e VIX a 15.66, MRK si distingue per la sua natura difensiva e la forte performance tecnica. Il titolo ha uno score tecnico di 99.2/100, \u00e8 sopra sia la MA50 che la MA200, e si trova a soli -3.19% dal suo massimo a 52 s",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 7,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-06-16",
+    "close_price": 114.25,
+    "close_reason": "STOP",
+    "pnl_pct": -5.0,
+    "days_held": 11,
     "current_price": 119.05000305175781,
     "current_pnl_pct": -1.01
   },
@@ -109,8 +109,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 2,
-    "current_price": 82.62000274658203,
+    "days_held": 9,
+    "current_price": 79.38999938964844,
     "current_pnl_pct": NaN
   },
   {
@@ -138,7 +138,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 3,
+    "current_price": 216.49000549316406,
+    "current_pnl_pct": -2.3
   },
   {
     "id": "GOOGL_2026-06-17",
@@ -165,7 +167,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 2,
+    "current_price": 368.0299987792969,
+    "current_pnl_pct": -1.4
   },
   {
     "id": "UNH_2026-06-18",
@@ -192,6 +196,6 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 1
   }
 ]
