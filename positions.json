@@ -109,8 +109,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 9,
-    "current_price": 79.38999938964844,
+    "days_held": 16,
+    "current_price": 82.62999725341797,
     "current_pnl_pct": NaN
   },
   {
@@ -133,12 +133,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime di mercato 'range' con volatilit\u00e0 media (VIX=16.14) e 'risk mode neutral', ABBV si presenta come una scelta difensiva ma con potenziale di crescita. Il suo score tecnico di 81.5/100 \u00e8 il pi\u00f9 alto tra i candidati, indicando una forza relativa. Il titolo \u00e8 sopra sia la MA50 che la MA200, ",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 3,
+    "status": "CLOSED_TARGET",
+    "close_date": "2026-06-25",
+    "close_price": 240.94,
+    "close_reason": "TARGET",
+    "pnl_pct": 8.73,
+    "days_held": 9,
     "current_price": 216.49000549316406,
     "current_pnl_pct": -2.3
   },
@@ -162,12 +162,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime bull-quiet, GOOGL presenta un solido score tecnico (100/100) e un forte momentum a 3 e 6 mesi (+21.38% e +21.26% rispettivamente), pur avendo subito un leggero ritracciamento nell'ultimo mese (-5.91%), che pu\u00f2 rappresentare un punto di ingresso. La correlazione con SPY (0.569) \u00e8 media, ",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 2,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-06-22",
+    "close_price": 353.09,
+    "close_reason": "STOP",
+    "pnl_pct": -5.4,
+    "days_held": 5,
     "current_price": 368.0299987792969,
     "current_pnl_pct": -1.4
   },
@@ -196,7 +196,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 1
+    "days_held": 8,
+    "current_price": 427.8900146484375,
+    "current_pnl_pct": 7.1
   },
   {
     "id": "MRK_2026-06-24",
@@ -223,7 +225,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 2,
+    "current_price": 128.66000366210938,
+    "current_pnl_pct": 7.58
   },
   {
     "id": "JNJ_2026-06-25",
@@ -250,6 +254,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 1,
+    "current_price": 254.66000366210938,
+    "current_pnl_pct": 5.67
   }
 ]
