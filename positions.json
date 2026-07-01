@@ -257,5 +257,32 @@
     "days_held": 1,
     "current_price": 254.66000366210938,
     "current_pnl_pct": 5.67
+  },
+  {
+    "id": "LLY_2026-07-01",
+    "ticker": "LLY",
+    "company_name": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "entry_date": "2026-07-01",
+    "entry_price": 1199.43,
+    "stop_loss_price": 1132.58,
+    "take_profit_price": 1329.42,
+    "stop_loss_pct": -5.57,
+    "take_profit_pct": 10.84,
+    "risk_reward": 1.94,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 16.81,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime bull-quiet con un VIX a 16.81 e un trend SPY rialzista dell'8.57% sulla MA200, LLY si distingue per il suo eccellente score tecnico di 99.4/100 e un momentum robusto, con un rendimento del 10.83% nell'ultimo mese e del 30.63% negli ultimi tre mesi. Il titolo \u00e8 sopra sia la MA50 che la M",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
