@@ -109,8 +109,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 16,
-    "current_price": 82.62999725341797,
+    "days_held": 23,
+    "current_price": 84.13999938964844,
     "current_pnl_pct": NaN
   },
   {
@@ -196,9 +196,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 8,
-    "current_price": 427.8900146484375,
-    "current_pnl_pct": 7.1
+    "days_held": 15,
+    "current_price": 425.3599853515625,
+    "current_pnl_pct": 6.47
   },
   {
     "id": "MRK_2026-06-24",
@@ -225,9 +225,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 2,
-    "current_price": 128.66000366210938,
-    "current_pnl_pct": 7.58
+    "days_held": 9,
+    "current_price": 129.55999755859375,
+    "current_pnl_pct": 8.33
   },
   {
     "id": "JNJ_2026-06-25",
@@ -249,12 +249,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime di bull-quiet con volatilit\u00e0 media (VIX=18.01) e breadth debole, JNJ si presenta come una scelta difensiva ma con forte momentum tecnico. Il suo score tecnico di 99.2/100 \u00e8 eccellente, con il prezzo sopra sia la MA50 che la MA200 e a soli -3.7% dal massimo di 52 settimane. I rendimenti ",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 1,
+    "status": "CLOSED_TARGET",
+    "close_date": "2026-07-02",
+    "close_price": 260.28,
+    "close_reason": "TARGET",
+    "pnl_pct": 8.0,
+    "days_held": 7,
     "current_price": 254.66000366210938,
     "current_pnl_pct": 5.67
   },
@@ -283,6 +283,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 2,
+    "current_price": 1213.9100341796875,
+    "current_pnl_pct": 1.21
   }
 ]
