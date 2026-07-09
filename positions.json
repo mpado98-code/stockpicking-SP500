@@ -313,5 +313,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "ABBV_2026-07-09",
+    "ticker": "ABBV",
+    "company_name": "AbbVie",
+    "sector": "Healthcare",
+    "entry_date": "2026-07-09",
+    "entry_price": 252.74,
+    "stop_loss_price": 239.37,
+    "take_profit_price": 278.75,
+    "stop_loss_pct": -5.29,
+    "take_profit_pct": 10.29,
+    "risk_reward": 1.94,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 16.86,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime 'bull-quiet' con SPY in forte trend rialzista (+8.0% vs MA200) e volatilit\u00e0 media (VIX=16.86), ABBV si distingue per il suo eccellente score tecnico (100/100) e un momentum di prezzo robusto (1M=13.3%, 3M=20.44%). La sua correlazione quasi nulla con SPY (-0.004) la rende un'ottima scelt",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
