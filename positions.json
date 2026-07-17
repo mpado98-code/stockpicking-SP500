@@ -109,8 +109,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 30,
-    "current_price": 83.48999786376953,
+    "days_held": 37,
+    "current_price": 81.55999755859375,
     "current_pnl_pct": NaN
   },
   {
@@ -191,12 +191,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime di mercato 'bull-quiet' con SPY in trend rialzista (+8.06% vs MA200) ma con debolezza di breadth e volatilit\u00e0 media (VIX=17.16), UNH si presenta come una scelta robusta. Il suo score tecnico \u00e8 perfetto (100/100), \u00e8 sopra sia la MA50 che la MA200, e si trova a soli -3.53% dal suo massimo",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 22,
+    "status": "CLOSED_TARGET",
+    "close_date": "2026-07-16",
+    "close_price": 434.6,
+    "close_reason": "TARGET",
+    "pnl_pct": 8.78,
+    "days_held": 28,
     "current_price": 424.6199951171875,
     "current_pnl_pct": 6.28
   },
@@ -220,12 +220,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "MRK si presenta come una scelta robusta nel regime bull-quiet attuale, caratterizzato da un SPY in trend rialzista del 7.02% rispetto alla MA200 e una volatilit\u00e0 media (VIX=19.27). Il suo score tecnico perfetto (100/100) e il momentum positivo a 6 mesi (+20.04%) indicano forza. La correlazione molto",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 16,
+    "status": "CLOSED_TARGET",
+    "close_date": "2026-07-17",
+    "close_price": 131.25,
+    "close_reason": "TARGET",
+    "pnl_pct": 9.74,
+    "days_held": 23,
     "current_price": 123.54000091552734,
     "current_pnl_pct": 3.29
   },
@@ -283,9 +283,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 9,
-    "current_price": 1188.5799560546875,
-    "current_pnl_pct": -0.9
+    "days_held": 16,
+    "current_price": 1179.1099853515625,
+    "current_pnl_pct": -1.69
   },
   {
     "id": "JNJ_2026-07-07",
@@ -307,12 +307,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime 'bull-quiet' con VIX a 15.83 e un trend SPY rialzista del 9.0% sulla MA200, JNJ offre un'opportunit\u00e0 risk-adjusted superiore. Il suo score tecnico di 98.7/100 \u00e8 eccellente, con il prezzo sopra sia la MA50 che la MA200 e a soli -1.43% dal massimo a 52 settimane. Il momentum a 1 mese \u00e8 fo",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 3,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-07-15",
+    "close_price": 246.36,
+    "close_reason": "STOP",
+    "pnl_pct": -5.0,
+    "days_held": 8,
     "current_price": 256.9800109863281,
     "current_pnl_pct": -0.91
   },
@@ -341,9 +341,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 1,
-    "current_price": 248.0800018310547,
-    "current_pnl_pct": -1.84
+    "days_held": 8,
+    "current_price": 254.49000549316406,
+    "current_pnl_pct": 0.69
   },
   {
     "id": "AAPL_2026-07-17",
@@ -370,6 +370,6 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 0
   }
 ]
