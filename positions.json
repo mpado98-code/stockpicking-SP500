@@ -344,5 +344,32 @@
     "days_held": 1,
     "current_price": 248.0800018310547,
     "current_pnl_pct": -1.84
+  },
+  {
+    "id": "AAPL_2026-07-17",
+    "ticker": "AAPL",
+    "company_name": "Apple Inc.",
+    "sector": "Technology",
+    "entry_date": "2026-07-17",
+    "entry_price": 333.26,
+    "stop_loss_price": 316.6,
+    "take_profit_price": 363.61,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 9.11,
+    "risk_reward": 1.82,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 18.5,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "medium (0.5-0.75)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime bull-quiet con SPY in trend rialzista (+8.33% vs MA200) e VIX a 18.5, AAPL si presenta come una scelta robusta. Il suo score tecnico di 98.9/100 \u00e8 eccellente, con il prezzo sopra sia la MA50 che la MA200 e a soli -0.42% dal massimo delle 52 settimane. I rendimenti recenti sono molto for",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
