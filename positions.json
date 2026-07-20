@@ -371,5 +371,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": 0
+  },
+  {
+    "id": "MRK_2026-07-20",
+    "ticker": "MRK",
+    "company_name": "Merck & Co., Inc.",
+    "sector": "Healthcare",
+    "entry_date": "2026-07-20",
+    "entry_price": 127.5,
+    "stop_loss_price": 120.73,
+    "take_profit_price": 140.66,
+    "stop_loss_pct": -5.31,
+    "take_profit_pct": 10.32,
+    "risk_reward": 1.94,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 18.43,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime di mercato bull-quiet con SPY in trend rialzista del 7.19% rispetto alla MA200 e VIX a 18.43, MRK si distingue per il suo score tecnico elevato (94.2/100) e la sua bassa correlazione con SPY (0.026), offrendo un profilo difensivo ma con potenziale di crescita. Il titolo \u00e8 sopra le medie",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
