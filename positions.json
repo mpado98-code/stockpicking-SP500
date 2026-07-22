@@ -425,5 +425,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "JNJ_2026-07-22",
+    "ticker": "JNJ",
+    "company_name": "Johnson & Johnson",
+    "sector": "Healthcare",
+    "entry_date": "2026-07-22",
+    "entry_price": 250.61,
+    "stop_loss_price": 238.08,
+    "take_profit_price": 273.15,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.99,
+    "risk_reward": 1.8,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 17.34,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime di mercato 'bull-quiet' con SPY in trend rialzista (+7.78% vs MA200) e volatilit\u00e0 media (VIX=17.34), JNJ si presenta come una scelta robusta. Il suo score tecnico regime-aware di 99.4/100 \u00e8 eccellente, indicando una forte performance recente (1M=+8.35%, 3M=+11.45%) e la capacit\u00e0 di mant",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
