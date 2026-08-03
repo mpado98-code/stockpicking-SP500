@@ -460,5 +460,32 @@
     "days_held": 6,
     "current_price": 263.3999938964844,
     "current_pnl_pct": 5.1
+  },
+  {
+    "id": "KO_2026-08-03",
+    "ticker": "KO",
+    "company_name": "Coca-Cola Company",
+    "sector": "Consumer Defensive",
+    "entry_date": "2026-08-03",
+    "entry_price": 87.59,
+    "stop_loss_price": 83.21,
+    "take_profit_price": 95.05,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.51,
+    "risk_reward": 1.7,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 15.99,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime 'bull-quiet' con SPY in trend rialzista (+7.12% vs MA200) e volatilit\u00e0 media (VIX=15.99), KO offre un'opportunit\u00e0 difensiva con potenziale di crescita stabile. Il titolo ha uno score tecnico elevato (99.4/100), \u00e8 sopra le medie mobili a 50 e 200 giorni, e si trova a soli -3.66% dal suo ",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
