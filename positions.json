@@ -514,5 +514,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "NVDA_2026-08-06",
+    "ticker": "NVDA",
+    "company_name": "NVIDIA Corporation",
+    "sector": "Technology",
+    "entry_date": "2026-08-06",
+    "entry_price": 219.22,
+    "stop_loss_price": 204.8,
+    "take_profit_price": 247.26,
+    "stop_loss_pct": -6.58,
+    "take_profit_pct": 12.79,
+    "risk_reward": 1.94,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 15.93,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "high (>0.75)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "Nel regime bull-quiet attuale, caratterizzato da un trend SPY rialzista (+10.12% vs MA200) e volatilit\u00e0 media (VIX=15.93), NVDA si distingue con uno score tecnico perfetto (100/100) e un forte momentum a breve termine (1S=12.4%, 1M=7.4%). La correlazione di 0.663 vs SPY la rende un'opzione aggressiv",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
