@@ -341,9 +341,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 22,
-    "current_price": 250.94000244140625,
-    "current_pnl_pct": -0.71
+    "days_held": 29,
+    "current_price": 246.0399932861328,
+    "current_pnl_pct": -2.65
   },
   {
     "id": "AAPL_2026-07-17",
@@ -399,9 +399,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 11,
-    "current_price": 130.1999969482422,
-    "current_pnl_pct": 2.12
+    "days_held": 18,
+    "current_price": 128.5800018310547,
+    "current_pnl_pct": 0.85
   },
   {
     "id": "UNH_2026-07-21",
@@ -423,12 +423,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "Il regime di mercato attuale \u00e8 di 'range' con volatilit\u00e0 media (VIX=17.47) e un rischio neutrale. In questo contesto, UNH, con un beta di 0.103 vs SPY, offre un'esposizione difensiva ma con un forte momentum tecnico (score 92.5/100) e fondamentali solidi. Il titolo \u00e8 sopra le MA50 e MA200, indicando",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 10,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-08-05",
+    "close_price": 398.38,
+    "close_reason": "STOP",
+    "pnl_pct": -5.5,
+    "days_held": 15,
     "current_price": 414.3999938964844,
     "current_pnl_pct": -1.7
   },
@@ -486,7 +486,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 4,
+    "current_price": 87.05000305175781,
+    "current_pnl_pct": -0.62
   },
   {
     "id": "JNJ_2026-08-04",
@@ -513,7 +515,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 3,
+    "current_price": 259.239990234375,
+    "current_pnl_pct": NaN
   },
   {
     "id": "NVDA_2026-08-06",
@@ -540,7 +544,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 1,
+    "current_price": 223.9600067138672,
+    "current_pnl_pct": 2.16
   },
   {
     "id": "LLY_2026-08-07",
@@ -567,6 +573,6 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 0
   }
 ]
