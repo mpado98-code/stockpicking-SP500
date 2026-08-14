@@ -341,9 +341,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 29,
-    "current_price": 246.0399932861328,
-    "current_pnl_pct": -2.65
+    "days_held": 36,
+    "current_price": 249.4600067138672,
+    "current_pnl_pct": -1.3
   },
   {
     "id": "AAPL_2026-07-17",
@@ -399,9 +399,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 18,
-    "current_price": 128.5800018310547,
-    "current_pnl_pct": 0.85
+    "days_held": 25,
+    "current_price": 135.83999633789062,
+    "current_pnl_pct": 6.54
   },
   {
     "id": "UNH_2026-07-21",
@@ -486,9 +486,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 4,
-    "current_price": 87.05000305175781,
-    "current_pnl_pct": -0.62
+    "days_held": 11,
+    "current_price": 87.70999908447266,
+    "current_pnl_pct": 0.14
   },
   {
     "id": "JNJ_2026-08-04",
@@ -515,8 +515,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 3,
-    "current_price": 259.239990234375,
+    "days_held": 10,
+    "current_price": 260.3500061035156,
     "current_pnl_pct": NaN
   },
   {
@@ -544,9 +544,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 1,
-    "current_price": 223.9600067138672,
-    "current_pnl_pct": 2.16
+    "days_held": 8,
+    "current_price": 225.16000366210938,
+    "current_pnl_pct": 2.71
   },
   {
     "id": "LLY_2026-08-07",
@@ -573,7 +573,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 0
+    "days_held": 7,
+    "current_price": 1180.1600341796875,
+    "current_pnl_pct": -0.99
   },
   {
     "id": "MSFT_2026-08-10",
@@ -600,6 +602,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 4,
+    "current_price": 495.3999938964844,
+    "current_pnl_pct": -0.92
   }
 ]
