@@ -336,12 +336,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime 'bull-quiet' con SPY in forte trend rialzista (+8.0% vs MA200) e volatilit\u00e0 media (VIX=16.86), ABBV si distingue per il suo eccellente score tecnico (100/100) e un momentum di prezzo robusto (1M=13.3%, 3M=20.44%). La sua correlazione quasi nulla con SPY (-0.004) la rende un'ottima scelt",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 43,
+    "status": "CLOSED_TIMEOUT",
+    "close_date": "2026-08-28",
+    "close_price": 255.48,
+    "close_reason": "TIMEOUT",
+    "pnl_pct": 1.08,
+    "days_held": 50,
     "current_price": 264.9599914550781,
     "current_pnl_pct": 4.84
   },
@@ -486,9 +486,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 18,
-    "current_price": 91.0999984741211,
-    "current_pnl_pct": 4.01
+    "days_held": 26,
+    "current_price": 89.66000366210938,
+    "current_pnl_pct": 2.36
   },
   {
     "id": "JNJ_2026-08-04",
@@ -515,8 +515,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 17,
-    "current_price": 270.239990234375,
+    "days_held": 25,
+    "current_price": 268.0400085449219,
     "current_pnl_pct": NaN
   },
   {
@@ -544,9 +544,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 15,
-    "current_price": 214.72000122070312,
-    "current_pnl_pct": -2.05
+    "days_held": 23,
+    "current_price": 217.5500030517578,
+    "current_pnl_pct": -0.76
   },
   {
     "id": "LLY_2026-08-07",
@@ -573,9 +573,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 14,
-    "current_price": 1255.4000244140625,
-    "current_pnl_pct": 5.32
+    "days_held": 22,
+    "current_price": 1174.6099853515625,
+    "current_pnl_pct": -1.45
   },
   {
     "id": "MSFT_2026-08-10",
@@ -602,9 +602,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 11,
-    "current_price": 483.239990234375,
-    "current_pnl_pct": -3.35
+    "days_held": 19,
+    "current_price": 513.530029296875,
+    "current_pnl_pct": 2.71
   },
   {
     "id": "MRK_2026-08-24",
@@ -631,6 +631,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 5,
+    "current_price": 148.35000610351562,
+    "current_pnl_pct": -2.75
   }
 ]
