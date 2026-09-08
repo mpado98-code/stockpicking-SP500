@@ -634,5 +634,32 @@
     "days_held": 11,
     "current_price": 150.3300018310547,
     "current_pnl_pct": -1.46
+  },
+  {
+    "id": "BAC_2026-09-08",
+    "ticker": "BAC",
+    "company_name": "Bank of America Corp",
+    "sector": "Financial Services",
+    "entry_date": "2026-09-08",
+    "entry_price": 62.68,
+    "stop_loss_price": 59.55,
+    "take_profit_price": 67.69,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.0,
+    "risk_reward": 1.6,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 15.74,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "medium (0.5-0.75)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime 'bull-quiet' con un VIX a 15.74 e un trend SPY rialzista dell'8.5% sulla MA200, BAC presenta un'opportunit\u00e0 interessante. Il titolo ha uno score tecnico perfetto di 100/100, \u00e8 sopra sia la MA50 che la MA200, e si trova a soli -3.42% dal suo massimo a 52 settimane. I rendimenti a 3 e 6 m",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
