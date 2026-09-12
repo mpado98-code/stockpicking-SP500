@@ -486,9 +486,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 32,
-    "current_price": 88.06999969482422,
-    "current_pnl_pct": 0.55
+    "days_held": 40,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "JNJ_2026-08-04",
@@ -515,8 +515,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 31,
-    "current_price": 275.2300109863281,
+    "days_held": 39,
+    "current_price": NaN,
     "current_pnl_pct": NaN
   },
   {
@@ -544,9 +544,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 29,
-    "current_price": 230.36000061035156,
-    "current_pnl_pct": 5.08
+    "days_held": 37,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "LLY_2026-08-07",
@@ -568,12 +568,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime di mercato 'bull-quiet' con SPY in forte trend rialzista (+9.86% vs MA200) e volatilit\u00e0 media (VIX=15.28), LLY si distingue per il suo eccellente score tecnico (100/100) e la sua bassa correlazione con SPY (0.023). Questo la rende un'ottima scelta difensiva ma con potenziale di crescita",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 28,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-09-08",
+    "close_price": 1116.45,
+    "close_reason": "STOP",
+    "pnl_pct": -6.33,
+    "days_held": 32,
     "current_price": 1149.3599853515625,
     "current_pnl_pct": -3.57
   },
@@ -602,9 +602,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 25,
-    "current_price": 499.70001220703125,
-    "current_pnl_pct": -0.06
+    "days_held": 33,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "MRK_2026-08-24",
@@ -626,12 +626,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime bull-quiet, MRK presenta un eccellente score tecnico di 95.9/100, con rendimenti robusti a 1 mese (+16.39%), 3 mesi (+25.52%) e 6 mesi (+25.01%), e si trova a solo -1.26% dal suo massimo a 52 settimane. La correlazione di 90 giorni con SPY \u00e8 negativa (-0.068), offrendo una potenziale di",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 11,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-09-10",
+    "close_price": 144.45,
+    "close_reason": "STOP",
+    "pnl_pct": -5.31,
+    "days_held": 17,
     "current_price": 150.3300018310547,
     "current_pnl_pct": -1.46
   },
@@ -660,7 +660,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 4,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "JPM_2026-09-11",
@@ -687,6 +689,6 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 1
   }
 ]
