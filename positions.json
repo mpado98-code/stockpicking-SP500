@@ -481,12 +481,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime 'bull-quiet' con SPY in trend rialzista (+7.12% vs MA200) e volatilit\u00e0 media (VIX=15.99), KO offre un'opportunit\u00e0 difensiva con potenziale di crescita stabile. Il titolo ha uno score tecnico elevato (99.4/100), \u00e8 sopra le medie mobili a 50 e 200 giorni, e si trova a soli -3.66% dal suo ",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 40,
+    "status": "CLOSED_TIMEOUT",
+    "close_date": "2026-09-18",
+    "close_price": NaN,
+    "close_reason": "TIMEOUT",
+    "pnl_pct": NaN,
+    "days_held": 46,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -515,7 +515,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 39,
+    "days_held": 46,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -544,7 +544,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 37,
+    "days_held": 44,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -602,7 +602,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 33,
+    "days_held": 40,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -655,12 +655,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime 'bull-quiet' con un VIX a 15.74 e un trend SPY rialzista dell'8.5% sulla MA200, BAC presenta un'opportunit\u00e0 interessante. Il titolo ha uno score tecnico perfetto di 100/100, \u00e8 sopra sia la MA50 che la MA200, e si trova a soli -3.42% dal suo massimo a 52 settimane. I rendimenti a 3 e 6 m",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 4,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-09-14",
+    "close_price": 59.55,
+    "close_reason": "STOP",
+    "pnl_pct": -4.99,
+    "days_held": 6,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -689,7 +689,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 1
+    "days_held": 8,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "MRK_2026-09-15",
@@ -716,7 +718,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 4,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "LLY_2026-09-16",
@@ -743,6 +747,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 3,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   }
 ]
