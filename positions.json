@@ -750,5 +750,32 @@
     "days_held": 3,
     "current_price": NaN,
     "current_pnl_pct": NaN
+  },
+  {
+    "id": "AAPL_2026-09-22",
+    "ticker": "AAPL",
+    "company_name": "Apple Inc.",
+    "sector": "Technology",
+    "entry_date": "2026-09-22",
+    "entry_price": 338.98,
+    "stop_loss_price": 322.03,
+    "take_profit_price": 366.1,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.0,
+    "risk_reward": 1.6,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 14.69,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "Nel regime bull-quiet attuale, Apple (AAPL) si distingue per il suo eccellente score tecnico (100/100) e un momentum robusto, con rendimenti a 1 mese del 9.58% e a 3 mesi del 15.28%. La sua correlazione molto bassa con SPY (0.099) la rende un'opzione difensiva ma con potenziale di crescita in un con",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
