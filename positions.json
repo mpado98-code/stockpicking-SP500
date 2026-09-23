@@ -777,5 +777,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "UNH_2026-09-23",
+    "ticker": "UNH",
+    "company_name": "UnitedHealth Group Inc.",
+    "sector": "Healthcare",
+    "entry_date": "2026-09-23",
+    "entry_price": NaN,
+    "stop_loss_price": NaN,
+    "take_profit_price": NaN,
+    "stop_loss_pct": -7.0,
+    "take_profit_pct": 14.0,
+    "risk_reward": 2.0,
+    "conviction": 75,
+    "regime_at_entry": "range",
+    "vix_at_entry": 14.33,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "Il regime di mercato attuale \u00e8 'range' con bassa volatilit\u00e0 (VIX=14.33) e un 'risk mode' neutro. In questo contesto, un'azione difensiva con bassa correlazione al mercato generale \u00e8 preferibile. UNH, con una correlazione di 0.095 vs SPY, si distingue. Sebbene lo score tecnico sia 55/100, la sua natu",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
