@@ -515,7 +515,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 46,
+    "days_held": 53,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -539,12 +539,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "Nel regime bull-quiet attuale, caratterizzato da un trend SPY rialzista (+10.12% vs MA200) e volatilit\u00e0 media (VIX=15.93), NVDA si distingue con uno score tecnico perfetto (100/100) e un forte momentum a breve termine (1S=12.4%, 1M=7.4%). La correlazione di 0.663 vs SPY la rende un'opzione aggressiv",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 44,
+    "status": "CLOSED_TIMEOUT",
+    "close_date": "2026-09-25",
+    "close_price": NaN,
+    "close_reason": "TIMEOUT",
+    "pnl_pct": NaN,
+    "days_held": 50,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -597,12 +597,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime bull-quiet con SPY in forte trend rialzista (+10.45% vs MA200) e volatilit\u00e0 media (VIX=15.47), MSFT si distingue per il suo score tecnico perfetto (100/100) e un momentum eccezionale a breve termine (1M=29.83%). La sua correlazione con SPY \u00e8 relativamente bassa (0.308), offrendo una cer",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 40,
+    "status": "CLOSED_TIMEOUT",
+    "close_date": "2026-09-25",
+    "close_price": NaN,
+    "close_reason": "TIMEOUT",
+    "pnl_pct": NaN,
+    "days_held": 46,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -684,12 +684,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime di mercato 'range' con volatilit\u00e0 media (VIX=17.15) e un 'risk mode' neutro, JPM si distingue per la sua resilienza e il suo momentum positivo. Il titolo ha un eccellente score tecnico di 100/100, \u00e8 sopra sia la MA50 che la MA200, e si trova a soli -3.53% dal suo massimo a 52 settimane.",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 8,
+    "status": "CLOSED_STOP",
+    "close_date": "2026-09-24",
+    "close_price": 335.88,
+    "close_reason": "STOP",
+    "pnl_pct": -5.0,
+    "days_held": 13,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -718,7 +718,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 4,
+    "days_held": 11,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -747,7 +747,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 3,
+    "days_held": 10,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -776,7 +776,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 4,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "UNH_2026-09-23",
@@ -803,6 +805,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 3,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   }
 ]
