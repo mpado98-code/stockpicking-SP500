@@ -808,5 +808,32 @@
     "days_held": 3,
     "current_price": NaN,
     "current_pnl_pct": NaN
+  },
+  {
+    "id": "MSFT_2026-09-28",
+    "ticker": "MSFT",
+    "company_name": "Microsoft Corp",
+    "sector": "Technology",
+    "entry_date": "2026-09-28",
+    "entry_price": 506.44,
+    "stop_loss_price": 481.12,
+    "take_profit_price": 546.96,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.0,
+    "risk_reward": 1.6,
+    "conviction": 85,
+    "regime_at_entry": "bull-quiet",
+    "vix_at_entry": 15.91,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "medium (0.5-0.75)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "Microsoft (MSFT) \u00e8 la scelta migliore in un regime bull-quiet grazie al suo score tecnico perfetto (100/100) e alla sua resilienza. Nonostante un leggero calo nell'ultimo mese (-1.38%), ha mostrato una forte performance a 3 e 6 mesi (36.02% e 41.66%), indicando un solido trend rialzista. La sua corr",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
