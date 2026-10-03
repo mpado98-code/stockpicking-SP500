@@ -510,12 +510,12 @@
     "emp_p_target_10pct": null,
     "emp_p_stop_8pct": null,
     "tesi_breve": "In un regime di mercato 'range' con volatilit\u00e0 media (VIX=15.82) e risk mode neutral, JNJ offre un profilo difensivo attraente. La correlazione a 90 giorni con SPY di -0.228 \u00e8 significativamente bassa, indicando una potenziale decorrelazione o addirittura una correlazione inversa rispetto al mercato",
-    "status": "OPEN",
-    "close_date": null,
-    "close_price": null,
-    "close_reason": null,
-    "pnl_pct": null,
-    "days_held": 53,
+    "status": "CLOSED_TIMEOUT",
+    "close_date": "2026-10-02",
+    "close_price": NaN,
+    "close_reason": "TIMEOUT",
+    "pnl_pct": NaN,
+    "days_held": 59,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -718,7 +718,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 11,
+    "days_held": 18,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -747,7 +747,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 10,
+    "days_held": 17,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -776,7 +776,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 4,
+    "days_held": 11,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -805,7 +805,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 3,
+    "days_held": 10,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -834,6 +834,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 5,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   }
 ]
