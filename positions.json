@@ -866,5 +866,32 @@
     "days_held": 3,
     "current_price": NaN,
     "current_pnl_pct": NaN
+  },
+  {
+    "id": "PG_2026-10-20",
+    "ticker": "PG",
+    "company_name": "Procter & Gamble",
+    "sector": "Consumer Defensive",
+    "entry_date": "2026-10-20",
+    "entry_price": 157.69,
+    "stop_loss_price": 149.81,
+    "take_profit_price": 170.31,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.0,
+    "risk_reward": 1.6,
+    "conviction": 75,
+    "regime_at_entry": "range",
+    "vix_at_entry": 18.89,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime di mercato 'range' con volatilit\u00e0 media (VIX=18.89) e 'risk mode off', la preferenza va a titoli difensivi con bassa correlazione allo SPY. PG, con una correlazione di -0.046 vs SPY, si posiziona come un'ottima scelta. Il suo score tecnico regime-aware di 87.0/100 \u00e8 solido, con il prezz",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
