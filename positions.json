@@ -718,7 +718,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 32,
+    "days_held": 39,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -776,7 +776,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 25,
+    "days_held": 32,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -805,7 +805,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 24,
+    "days_held": 31,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -863,7 +863,7 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": 3,
+    "days_held": 10,
     "current_price": NaN,
     "current_pnl_pct": NaN
   },
@@ -892,7 +892,9 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 4,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   },
   {
     "id": "LLY_2026-10-22",
@@ -919,6 +921,8 @@
     "close_price": null,
     "close_reason": null,
     "pnl_pct": null,
-    "days_held": null
+    "days_held": 2,
+    "current_price": NaN,
+    "current_pnl_pct": NaN
   }
 ]
