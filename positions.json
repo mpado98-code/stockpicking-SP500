@@ -951,5 +951,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "KO_2026-11-05",
+    "ticker": "KO",
+    "company_name": "Coca-Cola Co",
+    "sector": "Consumer Defensive",
+    "entry_date": "2026-11-05",
+    "entry_price": 96.81,
+    "stop_loss_price": 91.97,
+    "take_profit_price": 104.55,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.0,
+    "risk_reward": 1.6,
+    "conviction": 78,
+    "regime_at_entry": "range",
+    "vix_at_entry": 19.8,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "Il regime di mercato attuale \u00e8 caratterizzato da un 'range' per SPY con una volatilit\u00e0 media (VIX=19.8) e un 'risk mode: off', suggerendo una preferenza per asset difensivi. KO, con una correlazione di -0.189 vs SPY, si presenta come una scelta resiliente. Il suo score tecnico di 84.5/100 \u00e8 solido, ",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
