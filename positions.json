@@ -982,5 +982,32 @@
     "days_held": 2,
     "current_price": 95.66999816894531,
     "current_pnl_pct": -1.18
+  },
+  {
+    "id": "ABBV_2026-11-09",
+    "ticker": "ABBV",
+    "company_name": "AbbVie Inc.",
+    "sector": "Healthcare",
+    "entry_date": "2026-11-09",
+    "entry_price": 292.08,
+    "stop_loss_price": 277.48,
+    "take_profit_price": 318.96,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 9.2,
+    "risk_reward": 1.84,
+    "conviction": 75,
+    "regime_at_entry": "range",
+    "vix_at_entry": 20.57,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime di mercato 'range' con volatilit\u00e0 media (VIX=20.57) e un contesto macroeconomico con tassi in leggero calo (yield_10y_30g_change_bps: -3.6), ABBV si presenta come una scelta difensiva ma con un solido momentum. Il titolo ha un eccellente score tecnico (92.5/100), \u00e8 sopra sia la MA50 che",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
