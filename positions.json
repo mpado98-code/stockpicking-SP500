@@ -1009,5 +1009,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "V_2026-11-12",
+    "ticker": "V",
+    "company_name": "Visa Inc.",
+    "sector": "Financial Services",
+    "entry_date": "2026-11-12",
+    "entry_price": 426.16,
+    "stop_loss_price": 404.85,
+    "take_profit_price": 460.88,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.15,
+    "risk_reward": 1.63,
+    "conviction": 85,
+    "regime_at_entry": "range",
+    "vix_at_entry": 18.31,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "Il regime di mercato attuale \u00e8 un 'range' con SPY in trend positivo (+4.05% sopra MA200) e volatilit\u00e0 media (VIX=18.31), ma con un 'risk mode: off' che suggerisce cautela. In questo contesto, Visa (V) si distingue per un eccellente score tecnico (97.5/100) e un forte momentum a 1 mese (+6.8%) e 3 me",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
