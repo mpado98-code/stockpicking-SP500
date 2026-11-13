@@ -1036,5 +1036,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "LLY_2026-11-13",
+    "ticker": "LLY",
+    "company_name": "Eli Lilly and Company",
+    "sector": "Healthcare",
+    "entry_date": "2026-11-13",
+    "entry_price": 1428.32,
+    "stop_loss_price": 1338.34,
+    "take_profit_price": 1603.28,
+    "stop_loss_pct": -6.3,
+    "take_profit_pct": 12.25,
+    "risk_reward": 1.94,
+    "conviction": 85,
+    "regime_at_entry": "range",
+    "vix_at_entry": 18.75,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "In un regime di mercato 'range' con volatilit\u00e0 media (VIX=18.75) e un contesto macroeconomico caratterizzato da tassi di interesse in aumento (yield_10y_30g_change_bps: 0.7), LLY si presenta come una scelta robusta. Il suo score tecnico \u00e8 elevato (89.5/100), \u00e8 ben al di sopra delle medie mobili (MA5",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
