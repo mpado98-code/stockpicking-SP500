@@ -1148,5 +1148,32 @@
     "close_reason": null,
     "pnl_pct": null,
     "days_held": null
+  },
+  {
+    "id": "WMT_2026-11-20",
+    "ticker": "WMT",
+    "company_name": "Walmart",
+    "sector": "Consumer Defensive",
+    "entry_date": "2026-11-20",
+    "entry_price": 130.31,
+    "stop_loss_price": 123.79,
+    "take_profit_price": 141.34,
+    "stop_loss_pct": -5.0,
+    "take_profit_pct": 8.46,
+    "risk_reward": 1.69,
+    "conviction": 85,
+    "regime_at_entry": "bear-volatile",
+    "vix_at_entry": 30.1,
+    "orizzonte_giorni": 45,
+    "beta_categoria": "low (corr SPY <0.5)",
+    "emp_p_target_10pct": null,
+    "emp_p_stop_8pct": null,
+    "tesi_breve": "Nel regime attuale di mercato bear-volatile (SPY -3.09% vs MA200, VIX=30.1), Walmart (WMT) si presenta come una scelta difensiva robusta. Il suo score tecnico regime-aware \u00e8 90.2/100, indicando una buona resilienza. Ha mostrato un forte momentum a 1 mese (+8.69%) e 3 mesi (+23.66%), superando ampiam",
+    "status": "OPEN",
+    "close_date": null,
+    "close_price": null,
+    "close_reason": null,
+    "pnl_pct": null,
+    "days_held": null
   }
 ]
